@@ -1,15 +1,16 @@
 # Copyright (c) 2023, python_app and contributors
 # For license information, please see license.txt
 
-# import frappe
-# from frappe.model.document import Document
+import frappe
+from frappe.model.document import Document
 
 
-class DemoDoctype():
+class DemoDoctype(Document):
     def before_save(self):
         self.full_name = self.first_name + " " + self.last_name
         # self.compute_age
         
+    
     # def compute_age(self):
     #     if self.date_of_birth:
     #         self.age=frappe.utils.date_diff(frappe.utils.today(),self.date_of_birth)/365
@@ -176,13 +177,45 @@ class DemoDoctype():
     #     frappe.doc.db_insert()
     
     
-    def get_list(self):
-       db=""
-       db.get_list('Demo Doctype')
-       db.get_list('Demo Doctype', pluck='name')
-       
-    # get_list()
+    # def get_list(self):
+    #    frappe.db.get_list('Demo Doctype')
+    #    frappe.db.get_list('Demo Doctype', pluck='name')
+    
+    # def db_exist(self):
+    #     db=db.exists("Demo Doctype", "nidhi@gmail.com")
+    
+    # def db_delete(self):
+    #     frappe.db.delete("Demo Doctype")
+    #     # frappe.db.delete("Error Log")
+    #     # frappe.db.delete("__Test Table")
+        
+    # def db_truncate(self):
+    #     frappe.db.truncate(" Doctype")
+    
+    # def db_sql(self):
+    #     data = frappe.db.sql("""
+    #     SELECT last_name FROM `tabDemo Doctype` """, as_dict=0)
+    
+    # def db_describe(self):
+    #     frappe.db.describe("Demo Doctype")
+        
+    # def create_file(self):
+    #     self.write_file()
+    #     # This ensures rollback if DB transaction is rolledback
+    #     frappe.db.after_rollback.add(self.rollback_file)
 
+    # def rollback_file(self):
+    #     self.delete_file()
+   
+    # def add_unique(self):
+    #     frappe.db.add_unique("Demo Doctype",["first_name","last_name"])
+
+
+
+        
+        
+
+       
 
 
 
