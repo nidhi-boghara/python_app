@@ -53,6 +53,7 @@ app_license = "MIT"
 # Jinja
 # ----------
 
+
 # add methods and filters to jinja environment
 # jinja = {
 #	"methods": "python_app.utils.jinja_methods",

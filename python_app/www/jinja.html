@@ -1,0 +1,143 @@
+
+<h1>Jinja API</h1>
+
+ <!-- frappe format -->
+
+<div>
+    {{ frappe.format('2019-09-08', {'fieldtype': 'Date'}) }}
+</div>
+
+<!-- frappe date format -->
+
+<div>
+    {{ frappe.format_date('2019-09-08') }}
+</div>
+
+<!-- get_url -->
+
+<div>
+    {{ frappe.get_url() }}
+</div>
+
+<!-- get_doc -->
+
+<div>
+    {% set doc = frappe.get_doc('Demo Doctype', 'nidhi@gmail.com') %}
+    {{ doc.title }} - {{ doc.status }}
+</div>
+
+<!-- get_all -->
+
+<div>
+    {% set tasks = frappe.get_all('Demo Doctype',fields=['first_name', 'last_name']) %}
+    <!-- {% for task in tasks %} -->
+    <div>
+        <h4>{{ task.title }}</h4>
+        <p>Due Date: {{ frappe.format_date(task.due_date) }}</p>
+    </div>
+    <!-- {% endfor %} -->
+</div>
+
+<!-- get_list -->
+
+<div>
+    {% set tasks = frappe.get_list('Demo Doctype') %}
+    <!-- {% for task in tasks %} -->
+    <div>
+        <h4>{{ task.title }}</h4>
+        <p>Due Date: {{ frappe.format_date(task.due_date) }}</p>
+    </div>
+    <!-- {% endfor %} -->
+</div>
+
+
+<!-- get_value -->
+
+<div>
+    <span>
+        {% set company_abbreviation = frappe.db.get_value('Company', 'TennisMart', 'abbr') %}
+        {{ company_abbreviation }}
+    </span>
+    <div>
+        {% set title, description = frappe.db.get_value('Demo Doctype', 'nidhi@gmail.com', ['first_name', 'last_name']) %}
+        <h4>{{ title }}</h4>
+        <h4>{{ description }}<h4>
+    </div>
+</div>
+
+
+<!-- get_single_value -->
+
+
+<div>
+    <span>
+        {% set timezone = frappe.db.get_single_value('Demo Doctype', 'full_name') %}
+        {{ timezone }}
+    </span>
+</div>
+
+<!-- get_system_setting -->
+
+<div>
+    {% if frappe.get_system_settings('country') == 'India' %}
+    <button>Button1</button>
+    {% else %}
+    <button>Button2</button>
+    {% endif %}
+</div>
+
+
+<!-- get_meta -->
+
+<div>
+    <span>
+        {% set meta = frappe.get_meta('Demo Doctype') %}
+        Task has {{ meta.fields | len }} fields.
+        {% if meta.get_field('status') %}
+        It also has a Status field.
+        {% endif %}
+    </span>
+</div>
+
+
+<!-- get_fullname -->
+
+<div>
+    <span>The fullname of admin is {{ frappe.get_fullname('Administrator') }}</span>
+    <span>The current logged in user is {{ frappe.get_fullname() }}</span>
+</div>
+
+<!-- render_template -->
+
+<!-- <div> -->
+    <!-- render a jinja template file -->
+    <!-- {{ frappe.render_template('templates/includes/footer/footer.html', {}) }} -->
+
+    <!-- render a jinja template string -->
+    <!-- <p>{{ frappe.render_template('{{ foo }}', {'foo': 'bar'}) }}</p>
+</div> -->
+
+<!-- frapee._ string -->
+
+<div>
+    <p>{{ _('This string should get translated') }}</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
