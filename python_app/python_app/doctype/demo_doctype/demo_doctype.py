@@ -1,11 +1,11 @@
 # Copyright (c) 2023, python_app and contributors
 # For license information, please see license.txt
 
-import frappe
-from frappe.model.document import Document
+# import frappe
+# from frappe.model.document import Document
 
 
-class DemoDoctype(Document):
+class DemoDoctype():
     def before_save(self):
         self.full_name = self.first_name + " " + self.last_name
         # self.compute_age
@@ -38,17 +38,17 @@ class DemoDoctype(Document):
         # doc.msgprint("doctype exist")
 	
  
-    # create a new document
-    def new_doc(self):
-        doc = frappe.new_doc('Task')
-        doc.title = 'New Task 2'
-        doc.insert()
+    # # create a new document
+    # def new_doc(self):
+    #     doc = frappe.new_doc('Task')
+    #     doc.title = 'New Task 2'
+    #     doc.insert()
     
-    def delete_doc(self):
-        frappe.delete_doc('Test',"nidhi")
+    # def delete_doc(self):
+    #     frappe.delete_doc('Test',"nidhi")
         
-    def rename_doc(self):
-        frappe.rename_doc('Test Doctype','202263519e','def')
+    # def rename_doc(self):
+    #     frappe.rename_doc('Test Doctype','202263519e','def')
         
 
     #frappe.get_doc(doctype,name)
@@ -70,18 +70,18 @@ class DemoDoctype(Document):
     #     doc.insert()
     
     # #frappe.del_doc(doctype,name)    
-    def validate(self):
-        self.delete_document()
-    def delete_document(self):
-        doc=frappe.delete_doc("Test Doctype","abc")  
+    # def validate(self):
+    #     self.delete_document()
+    # def delete_document(self):
+    #     doc=frappe.delete_doc("Test Doctype","abc")  
     
     
     # # frappe.db.exist(doctype,name)
-    def validate(self):
-        if frappe.db.exist("Client side scripting","nidhi@gmail.com"):
-            frappe.msgprint("The document is exist in database")
-        else:
-            frappe.msgprint("The document does not exist in database")
+    # def validate(self):
+    #     if frappe.db.exist("Client side scripting","nidhi@gmail.com"):
+    #         frappe.msgprint("The document is exist in database")
+    #     else:
+    #         frappe.msgprint("The document does not exist in database")
     
     # # frappe.db.count(dtoctype,filters)
     # def validate(self):
@@ -106,32 +106,88 @@ class DemoDoctype(Document):
     
     
     
-    def before_save(self):
-        frappe.throw("hello frappe from before_save event")
+    # def before_save(self):
+    #     frappe.throw("hello frappe from before_save event")
         
-    def before_insert(self):
-        frappe.throw("hello frappe from before_insert event")
+    # def before_insert(self):
+    #     frappe.throw("hello frappe from before_insert event")
         
-    def after_insert(self):
-        frappe.throw("hello frappe from after_insert event")
+    # def after_insert(self):
+    #     frappe.throw("hello frappe from after_insert event")
     
-    def on_update(self):
-        frappe.throw("hello frappe from on_update event")
+    # def on_update(self):
+    #     frappe.throw("hello frappe from on_update event")
     
-    def before_submit(self):
-        frappe.throw("hello frappe from before_submit event")
+    # def before_submit(self):
+    #     frappe.throw("hello frappe from before_submit event")
     
-    def on_submit(self):
-        frappe.throw("hello frappe from on_submit event")
+    # def on_submit(self):
+    #     frappe.throw("hello frappe from on_submit event")
     
-    def on_cancel(self):
-        frappe.throw("hello frappe from on_cancel event")
+    # def on_cancel(self):
+    #     frappe.throw("hello frappe from on_cancel event")
     
-    def on_trash(self):
-        frappe.throw("hello frappe from on_trash event")
+    # def on_trash(self):
+    #     frappe.throw("hello frappe from on_trash event")
     
-    def after_delete(self):
-        frappe.throw("hello frappe from after_delete event")
+    # def after_delete(self):
+    #     frappe.throw("hello frappe from after_delete event")
+        
+    # def get_meta(self): 
+    #     frappe.get_doc('DocType', 'Demo Doctype')
+    #     meta = frappe.get_meta('Demo')
+    #     meta.has_field('status') # True
+    #     meta.get_custom_fields() # [field1, field2, ..]
+    
+    # def doc_delte(self):
+    #     frappe.doc.delete()
+        
+    # def check_permission(self):
+    #     frappe.doc.check_permission(permtype='write') # throws if no write permission
+    
+    # def get_title(self):
+    #     title =frappe.doc.get_title("Demo Doctype")
+    
+    # updates value in database, updates the modified timestamp
+    # def db_set(self):
+    #     frappe.doc.db_set('first_name', 'dwiti')
+
+    # # updates value in database, will trigger doc.notify_update()
+    #     frappe.doc.db_set('price', 2300, notify=True)
+
+    # # updates value in database, will also run frappe.db.commit()
+    #     frappe.doc.db_set('price', 2300, commit=True)
+
+    # # updates value in database, does not update the modified timestamp
+    #     frappe.doc.db_set('price', 2300, update_modified=False)
+    
+    # # add john to list of seen
+    # def add_seen(self):
+    #     frappe.doc.add_seen('nidhi@gmail.com')
+    #     # add session user to list of seen
+    #     frappe.doc.add_seen()
+
+    # def queue_action(self):
+    #     frappe.doc.queue_action('send_emails', emails='Email', message='Howdy')
+    
+    
+    # def db_insert(self):
+    #     frappe.doc = frappe.get_doc(doctype="Demo Doctype", data="")
+    #     frappe.doc.db_insert()
+    
+    
+    def get_list(self):
+       db=""
+       db.get_list('Demo Doctype')
+       db.get_list('Demo Doctype', pluck='name')
+       
+    # get_list()
+
+
+
+
+
+
     
 
 
