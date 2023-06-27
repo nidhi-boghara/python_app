@@ -209,6 +209,177 @@ class DemoDoctype(Document):
    
     # def add_unique(self):
     #     frappe.db.add_unique("Demo Doctype",["first_name","last_name"])
+    
+    
+    
+# utility functions
+
+# # now()
+    
+# from frappe.utils import now
+
+# now() 
+
+# # getdate()
+
+# from frappe.utils import getdate
+
+# getdate() # datetime.date(2021, 5, 25)
+# getdate('2000-03-18') # datetime.date(2000, 3, 18)
+
+# # today()
+    
+# from frappe.utils import today
+
+# today() # '2021-05-25'
+
+# # add_to_date
+
+# from datetime import datetime # from python std library
+# from frappe.utils import add_to_date
+
+# today = datetime.now().strftime('%Y-%m-%d')
+# print(today) # '2021-05-21'
+
+# after_10_days = add_to_date(datetime.now(), days=10, as_string=True)    
+# print(after_10_days) # '2021-05-31'
+
+# add_to_date(datetime.now(), months=2) # datetime.datetime(2021, 7, 21, 15, 31, 18, 119999)
+# add_to_date(datetime.now(), days=10, as_string=True, as_datetime=True) # '2021-05-31 15:30:23.757661'
+# add_to_date(None, years=6) # datetime.datetime(2027, 5, 21, 15, 32, 31, 652089)
+
+
+# # pretty_date()
+
+# from frappe.utils import pretty_date, now, add_to_date
+
+# pretty_date(now()) # 'just now'
+
+
+# # format_duration
+
+# from frappe.utils import format_duration
+
+# format_duration(50) # '50s'
+# format_duration(10000) # '2h 46m 40s'
+# format_duration(1000000) # '11d 13h 46m 40s'
+
+# # Convert days to hours
+# format_duration(1000000, hide_days=True) # '277h 46m 40s'
+
+
+# # comma_and
+
+# from frappe.utils import comma_and
+
+# comma_and([1, 2, 3]) # "'1', '2' and '3'"
+# comma_and(['Apple', 'Ball', 'Cat'], add_quotes=False) # 'Apple, Ball and Cat'
+# comma_and('abcd') # 'abcd'
+
+
+# # money_in_words
+
+# from frappe.utils import money_in_words
+
+# money_in_words(900) # 'INR Nine Hundred and Fifty Paisa only.'
+# money_in_words(900.50) # 'INR Nine Hundred and Fifty Paisa only.'
+# money_in_words(900.50, 'USD') # 'USD Nine Hundred and Fifty Centavo only.'
+# money_in_words(900.50, 'USD', 'Cents') # 'USD Nine Hundred and Fifty Cents only.'
+
+# # validate_json_string
+
+# import frappe
+# from frappe.utils import validate_json_string
+
+# # No Exception thrown
+# validate_json_string('[]')
+# validate_json_string('[{}]')
+# validate_json_string('[{"player": "one", "score": 199}]')
+
+# try:
+#     # Throws frappe.ValidationError
+#     validate_json_string('invalid json')
+# except frappe.ValidationError:
+#     print('Not a valid JSON string')
+
+# # random_string
+
+# from frappe.utils import random_string
+
+# random_string(40) # 'mcrLCrlvkUdkaOe8m5xMI8IwDB8lszwJsWtZFveQ'
+# random_string(6) # 'htrB4L'
+# random_string(6) #'HNRirG'
+
+# # unique
+
+# from frappe.utils import unique
+
+# unique([1, 2, 3, 1, 1, 1]) # [1, 2, 3]
+# unique('abcda') # ['a', 'b', 'c', 'd']
+# unique(('Apple', 'Apple', 'Banana', 'Apple')) # ['Apple', 'Banana']
+
+
+# # get_pdf
+
+# import frappe
+# from frappe.utils.pdf import get_pdf
+
+# @frappe.whitelist(allow_guest=True)
+# def generate_invoice():
+#     cart = [{
+#         'Samsung Galaxy S20': 10,
+#         'iPhone 13': 80
+#     }]
+
+#     html = '<h1>Invoice from Star Electronics e-Store!</h1>'
+
+#     # Add items to PDF HTML
+#     html += '<ol>'
+#     for item, qty in cart.items():
+#         html += f'<li>{item} - {qty}</li>'
+#     html += '</ol>'
+
+#     # Attaching PDF to response
+#     frappe.local.response.filename = 'invoice.pdf'
+#     frappe.local.response.filecontent = get_pdf(html)
+#     frappe.local.response.type = 'pdf'
+
+
+# # get_abbr
+
+# from frappe.utils import get_abbr
+
+# get_abbr('Gavin') # 'G'
+# get_abbr('Coca Cola Company') # 'CC'
+# get_abbr('Mohammad Hussain Nagaria', max_len=3) # 'MHN'
+
+
+# # validate_url
+
+# from frappe.utils import validate_url
+
+# validate_url('google') # False
+# validate_url('https://google.com') # True
+# validate_url('https://google.com', throw=True) # throws ValidationError
+
+
+# validate_email_address
+
+from frappe.utils import validate_email_address
+
+# Single valid email address
+validate_email_address('rushabh@erpnext.com') # 'rushabh@erpnext.com'
+validate_email_address('other text, rushabh@erpnext.com, some other text') # 'rushabh@erpnext.com'
+
+# Multiple valid email address
+validate_email_address(
+    'some text, rushabh@erpnext.com, some other text, faris@erpnext.com, yet another no-emailic phrase.'
+) # 'rushabh@erpnext.com, faris@erpnext.com'
+
+# Invalid email address
+validate_email_address('some other text') # ''
+
+
 
 
 
