@@ -363,21 +363,46 @@ class DemoDoctype(Document):
 # validate_url('https://google.com', throw=True) # throws ValidationError
 
 
-# validate_email_address
+# # validate_email_address
 
-from frappe.utils import validate_email_address
+# from frappe.utils import validate_email_address
 
-# Single valid email address
-validate_email_address('rushabh@erpnext.com') # 'rushabh@erpnext.com'
-validate_email_address('other text, rushabh@erpnext.com, some other text') # 'rushabh@erpnext.com'
+# # Single valid email address
+# validate_email_address('rushabh@erpnext.com') # 'rushabh@erpnext.com'
+# validate_email_address('other text, rushabh@erpnext.com, some other text') # 'rushabh@erpnext.com'
 
-# Multiple valid email address
-validate_email_address(
-    'some text, rushabh@erpnext.com, some other text, faris@erpnext.com, yet another no-emailic phrase.'
-) # 'rushabh@erpnext.com, faris@erpnext.com'
+# # Multiple valid email address
+# validate_email_address(
+#     'some text, rushabh@erpnext.com, some other text, faris@erpnext.com, yet another no-emailic phrase.'
+# ) # 'rushabh@erpnext.com, faris@erpnext.com'
 
-# Invalid email address
-validate_email_address('some other text') # ''
+# # Invalid email address
+# validate_email_address('some other text') # ''
+
+# # validate_phone_number
+
+# from frappe.utils import validate_phone_number
+
+# # Valid phone numbers
+# validate_phone_number('753858375') # True
+# validate_phone_number('+91-75385837') # True
+
+# # Invalid phone numbers
+# validate_phone_number('invalid') # False
+# validate_phone_number('87345%%', throw=True) # InvalidPhoneNumberError
+
+
+# # frappe.cache()
+
+# import frappe
+
+# cache = frappe.cache()
+
+# cache.set('name', 'frappe') # True
+# cache.get('name') # b'frappe'
+
+
+
 
 
 

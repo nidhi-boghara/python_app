@@ -199,3 +199,11 @@ app_license = "MIT"
 # auth_hooks = [
 #	"python_app.auth.validate"
 # ]
+
+# hooks.py
+
+test_string = "value"
+test_list = ["value"]
+test_dict = {
+    "key": "value"
+}
