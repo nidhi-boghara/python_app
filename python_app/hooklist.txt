@@ -1,6 +1,9 @@
-js/css assets
 file hooks
+
 extend bootinfo
 braintree success page
+
 auth hook
 override form script
+override whitelisted method
+js/css assets

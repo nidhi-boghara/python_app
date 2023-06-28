@@ -267,10 +267,10 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # portal sidebar
 # --------------
 
-portal_menu_items = [
-    {"title": "Dashboard", "route": "/dashboard", "role": "Customer"},
-    {"title": "Orders", "route": "/orders", "role": "Customer"}
-]
+# portal_menu_items = [
+#     {"title": "Dashboard", "route": "/dashboard", "role": "Customer"},
+#     {"title": "Orders", "route": "/orders", "role": "Customer"}
+# ]
 
 # brand HTML
 # ----------
