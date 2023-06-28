@@ -1,0 +1,58 @@
+[
+ {
+  "age": 23,
+  "amended_from": null,
+  "date_of_birth": "2000-01-14",
+  "docstatus": 0,
+  "doctype": "Demo Doctype",
+  "email": "nidhi@gmail.com",
+  "first_name": "Nidhi",
+  "full_name": "Nidhi Boghara",
+  "last_name": "Boghara",
+  "modified": "2023-06-27 18:02:26.389058",
+  "name": "nidhi@gmail.com",
+  "phone": "+91-9876543210"
+ },
+ {
+  "age": 23,
+  "amended_from": null,
+  "date_of_birth": "2000-12-05",
+  "docstatus": 0,
+  "doctype": "Demo Doctype",
+  "email": "shruti@gmail.com",
+  "first_name": "shruti",
+  "full_name": "shruti patel",
+  "last_name": "patel",
+  "modified": "2023-06-26 11:10:27.229233",
+  "name": "shruti@gmail.com",
+  "phone": "+91-9876543213"
+ },
+ {
+  "age": 0,
+  "amended_from": null,
+  "date_of_birth": null,
+  "docstatus": 1,
+  "doctype": "Demo Doctype",
+  "email": "dwiti@gmail.com",
+  "first_name": "dwiti",
+  "full_name": "dwiti patel",
+  "last_name": "patel",
+  "modified": "2023-06-27 17:04:39.364195",
+  "name": "dwiti@gmail.com",
+  "phone": "+91-9876543210"
+ },
+ {
+  "age": 0,
+  "amended_from": null,
+  "date_of_birth": null,
+  "docstatus": 1,
+  "doctype": "Demo Doctype",
+  "email": "df@gmail.com",
+  "first_name": "nidhi",
+  "full_name": "nidhi efse",
+  "last_name": "efse",
+  "modified": "2023-06-27 17:05:46.010447",
+  "name": "df@gmail.com",
+  "phone": null
+ }
+]

@@ -10,7 +10,7 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/python_app/css/python_app.css"
+# app_include_css = "/assets/python_app/css/python_app.css"   
 # app_include_js = "/assets/python_app/js/python_app.js"
 
 # include js, css files in header of web template
@@ -197,7 +197,7 @@ app_license = "MIT"
 # --------------------------------
 
 # auth_hooks = [
-#	"python_app.auth.validate"
+# 	"python_app.auth.validate"
 # ]
 
 # # hooks.py
@@ -207,3 +207,117 @@ app_license = "MIT"
 # test_dict = {
 #     "key": "value"
 # }
+
+#  sound hook
+# ------------
+
+# sounds = [
+#     {"name": "MessageTone", "src": "/assets/app/python_app/python_app/public/MessageTone.mp3", "volume": 0.3}
+# ]
+
+# Migrate hooks
+# -------------
+
+# before_migrate = "app.migrate.before_migrate"
+# after_migrate = "app.migrate.after_migrate"
+
+# file hooks
+# ----------
+
+# before_write_file="app.overrides.file.before_write"
+# write_file="app.overrides.file.write_file"
+# delete_file_data_content="app.overrides.file.delete_file"
+
+# email hooks
+# ------------
+
+# override_email_send="app.overrides.email.send"
+# get_sender_details="app.overrides.email.get_sender_details"
+
+# extend bootinfo
+# ---------------
+
+# extend_bootinfo = "app.boot.boot_session"
+
+# website controller context
+# --------------------------
+
+# extend_website_page_controller_context = {
+#     "frappe.www.404": "app.pages.context_404"
+# }
+
+# website clear cache
+# -------------------
+
+# website_clear_cache = "app.overrides.clear_website_cache"
+
+
+# website 404
+# -----------
+
+# website_catch_all = "not_found"
+
+
+# default homepage
+# ------------------
+
+# homepage = "homepage"
+
+# portal sidebar
+# --------------
+
+# portal_menu_items = [
+#     {"title": "Dashboard", "route": "/dashboard", "role": "Customer"},
+#     {"title": "Orders", "route": "/orders", "role": "Customer"}
+# ]
+
+# brand HTML
+# ----------
+
+# brand_html = '<div><img src="image.jpg"> TennisMart</div>'
+
+# website context
+# ---------------
+
+# website_context = {
+#     #  "favicon": "/assets/sfa_sigzen/img/Varmora Logo Leaf.png",
+#      "app_logo":"/assets/app/python_app/python_app/public/Image/image.jpg",
+#     }
+
+# calendar hook
+# --------------
+
+# calendars = ["Appointment"]
+
+# clear cache
+# ----------
+
+# clear_cache = "app.cache.clear_cache"
+
+# session hooks
+# ------------
+
+# on_login = "app.overrides.successful_login"
+# on_session_creation = "app.overrides.allocate_free_credits"
+# on_logout = "app.overrides.clear_user_cache"
+
+
+# fixtures
+# --------
+
+fixtures = [
+    # export all records from the Category table
+    "Demo Doctype"
+]
+
+
+
+
+
+
+
+
+
+
+
+
