@@ -77,7 +77,7 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "python_app.notifications.get_notification_config"
+# notification_config  "python_app.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -96,7 +96,7 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # Override standard doctype classes
 
 # override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
+# 	"Demo Doctype": "python_app.overrides.CustomToDo"
 # }
 
 # Document Events
@@ -108,7 +108,7 @@ app_logo_url="/assets/python_app/img/image.jpg",
 #		"on_update": "method",
 #		"on_cancel": "method",
 #		"on_trash": "method"
-#	}
+#	}   
 # }
 
 # Scheduled Tasks
@@ -158,7 +158,7 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # Ignore links to specified DocTypes when deleting documents
 # -----------------------------------------------------------
 
-# ignore_links_on_delete = ["Communication", "ToDo"]
+# ignore_links_on_delete = ["Test Doctype", "abc"]
 
 # Request Events
 # ----------------
@@ -174,24 +174,24 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # --------------------
 
 # user_data_fields = [
-#	{
-#		"doctype": "{doctype_1}",
-#		"filter_by": "{filter_by}",
-#		"redact_fields": ["{field_1}", "{field_2}"],
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_2}",
-#		"filter_by": "{filter_by}",
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_3}",
-#		"strict": False,
-#	},
-#	{
-#		"doctype": "{doctype_4}"
-#	}
+# 	{
+# 		"doctype": "{Demo Doctype}",
+# 		"filter_by": "{first_name}",
+# 		"redact_fields": ["{First_name}", "{last_name}"],
+# 		"partial": 1,
+# 	},
+# 	{
+# 		"doctype": "{Test Doctype}",
+# 		"filter_by": "{first_name}",
+# 		"partial": 1,
+# 	},
+# 	{
+# 		"doctype": "{Single Doctype}",
+# 		"strict": False,
+# 	},
+# 	{
+# 		"doctype": "{Client side scripting}"
+# 	}
 # ]
 
 # Authentication and authorization
@@ -232,8 +232,8 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # email hooks
 # ------------
 
-# override_email_send="app.overrides.email.send"
-# get_sender_details="app.overrides.email.get_sender_details"
+# override_email_send="app.python_app.overrides.email.send"
+# get_sender_details="app.python_app.overrides.email.get_sender_details"
 
 # extend bootinfo
 # ---------------
@@ -267,10 +267,10 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # portal sidebar
 # --------------
 
-# portal_menu_items = [
-#     {"title": "Dashboard", "route": "/dashboard", "role": "Customer"},
-#     {"title": "Orders", "route": "/orders", "role": "Customer"}
-# ]
+portal_menu_items = [
+    {"title": "Dashboard", "route": "/dashboard", "role": "Customer"},
+    {"title": "Orders", "route": "/orders", "role": "Customer"}
+]
 
 # brand HTML
 # ----------
@@ -298,7 +298,7 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # session hooks
 # ------------
 
-# on_login = "app.overrides.successful_login"
+# on_login = "app.python_app.successful_login"
 # on_session_creation = "app.overrides.allocate_free_credits"
 # on_logout = "app.overrides.clear_user_cache"
 
@@ -347,10 +347,12 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # }
 
 # notification configuration
+# ---------------------------
 
 # notification_config = "app.notification.get_config"
 
 # user data protection & privacy
+# ---------------------------------
 
 # user_data_fields = [
 #     {"doctype": "Demo Doctype"},
@@ -363,6 +365,7 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # ]
 
 # # crud events
+# -------------
 
 # doc_events = {
 #     "*": {
@@ -376,7 +379,20 @@ app_logo_url="/assets/python_app/img/image.jpg",
 # }
 
 
+# default mail footer
+# -------------------
 
+# default_mail_footer = """
+#     <div>
+#         Sent via <a href="http://sigzen3.in:8000" target="_blank"></a>
+#     </div>
+# """
+
+
+# required apps
+# ------------
+
+# required_apps = ["erpnext"]
 
 
 
