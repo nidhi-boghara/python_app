@@ -80,7 +80,7 @@
    "table_fieldname": "family_member_doctype"
   }
  ],
- "modified": "2023-06-26 11:05:19.159545",
+ "modified": "2023-06-28 10:28:05.001224",
  "modified_by": "Administrator",
  "module": "python_app",
  "name": "Demo Doctype",

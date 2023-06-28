@@ -4,6 +4,7 @@ app_publisher = "python_app"
 app_description = "python_app"
 app_email = "python_app"
 app_license = "MIT"
+app_logo_url="/assets/python_app/img/image.jpg",
 # required_apps = []
 
 # Includes in <head>
@@ -114,21 +115,21 @@ app_license = "MIT"
 # ---------------
 
 # scheduler_events = {
-#	"all": [
-#		"python_app.tasks.all"
-#	],
-#	"daily": [
-#		"python_app.tasks.daily"
-#	],
-#	"hourly": [
-#		"python_app.tasks.hourly"
-#	],
-#	"weekly": [
-#		"python_app.tasks.weekly"
-#	],
-#	"monthly": [
-#		"python_app.tasks.monthly"
-#	],
+# 	"all": [
+# 		"python_app.tasks.all"
+# 	],
+# 	"daily": [
+# 		"python_app.tasks.daily"
+# 	],
+# 	"hourly": [
+# 		"python_app.tasks.hourly"
+# 	],
+# 	"weekly": [
+# 		"python_app.tasks.weekly"
+# 	],
+# 	"monthly": [
+# 		"python_app.tasks.monthly"
+# 	],
 # }
 
 # Testing
@@ -281,7 +282,7 @@ app_license = "MIT"
 
 # website_context = {
 #     #  "favicon": "/assets/sfa_sigzen/img/Varmora Logo Leaf.png",
-#      "app_logo":"/assets/app/python_app/python_app/public/Image/image.jpg",
+#      "app_logo":"/assets/python_app/img/image.jpg",
 #     }
 
 # calendar hook
@@ -305,10 +306,81 @@ app_license = "MIT"
 # fixtures
 # --------
 
-fixtures = [
-    # export all records from the Category table
-    "Demo Doctype"
-]
+# fixtures = [
+#     # export all records from the Category table
+#     "Demo Doctype"
+# ]
+
+# modify list query
+# ----------------
+
+# permission_query_conditions = {
+#     "ToDo": "app.permissions.todo_query",
+# }
+
+# document permissions
+# --------------------
+
+# has_permission = {
+#     "Event": "app.permissions.event_has_permission",
+# }
+
+# override doctype class
+# ---------------------
+
+# override_doctype_class = {
+#     "ToDo": "app.overrides.todo.CustomToDo"
+# }
+
+# override form script
+# --------------------
+
+# doctype_js = {
+#     "ToDo": "public/js/todo.js",
+# }
+
+# override whitelisted method
+# ---------------------------
+
+# override_whitelisted_methods = {
+#     "frappe.client.get_count": "app.whitelisted.custom_get_count"
+# }
+
+# notification configuration
+
+# notification_config = "app.notification.get_config"
+
+# user data protection & privacy
+
+# user_data_fields = [
+#     {"doctype": "Demo Doctype"},
+#     {"doctype": "Comment", "strict": True},
+#     {
+#         "doctype": "Demo Doctype",
+#         "filter_by": "email",
+#         "rename": True
+#     }
+# ]
+
+# # crud events
+
+# doc_events = {
+#     "*": {
+#         # will run after any DocType record is inserted into database
+#         "after_insert": "app.python_app.after_insert_all"
+#     },
+#     "Demo doctype": {
+#         # will run before a ToDo record is inserted into database
+#         "before_insert": "app.python_app.before_insert_demo_doctype",
+#     }
+# }
+
+
+
+
+
+
+
 
 
 
